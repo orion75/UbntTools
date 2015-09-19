@@ -13,7 +13,6 @@ namespace UbntTools {
 
 			var exename = Path.GetFileNameWithoutExtension (Assembly.GetEntryAssembly ().Location);
 			if (Platform.IsLinux) {
-				exename = exename.ToLower ();
 				Application.Initialize (ToolkitType.Gtk3);
 			} else if (Platform.IsWindows) {
 				Application.Initialize (ToolkitType.Wpf);

@@ -33,7 +33,7 @@ namespace UbntTools {
 			if (Platform.IsWindows)
 				Width = 650;
 			Height = 350;
-			Icon = Image.FromResource ("Resources.icon-64x64.png");
+			Icon = Image.FromResource ("UbntTools.Resources.icon-64x64.png");
 
 			list = new ListView ();
 			plataformField = new DataField<string> ();
@@ -124,7 +124,6 @@ namespace UbntTools {
 			};
 			BtnCompilanceTest.Clicked += (sender, e) => {
 				var dlg = new CompilanceTestDialog ();
-				//dlg.TransientFor = this;
 				dlg.Run (this);
 				dlg.Dispose ();
 			};
@@ -181,7 +180,7 @@ namespace UbntTools {
 
 		void OpenDeviceDialog () {
 			var dlg = new DeviceDialog (Devices[list.SelectedRow]);
-			dlg.Run ();
+			dlg.Run (this);
 			dlg.Dispose ();
 		}
 

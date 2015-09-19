@@ -4,9 +4,10 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{09F16706-B211-4C48-BD2A-4997C80DC704}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <RootNamespace>UbntTools</RootNamespace>
     <AssemblyName>UbntTools</AssemblyName>
+    <ApplicationIcon>Resources\UbntTools.ico</ApplicationIcon>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -28,4 +29,56 @@
     <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Compile Include="UbntTools.Core\DeviceDiscovery.cs" />
+    <Compile Include="UbntTools.Core\DiscoveryPacket.cs" />
+    <Compile Include="UbntTools.Core\EmbeddedAssembly.cs" />
+    <Compile Include="UbntTools.Core\IApplication.cs" />
+    <Compile Include="UbntTools.Core\Platform.cs" />
+    <Compile Include="UbntTools.Core\Runtime.cs" />
+    <Compile Include="UbntTools.Core\Utils.cs" />
+    <Compile Include="UbntTools.Entity\Device.cs" />
+    <Compile Include="UbntTools.Entity\DeviceAddress.cs" />
+    <Compile Include="UbntTools.Entity\FirmWare.cs" />
+    <Compile Include="IdeStartup.cs" />
+    <Compile Include="MainWindows.cs" />
+    <Compile Include="CompilanceTestDialog.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="DeviceDialog.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UbntTools.ico" />
+    <None Include="Resources\icon-256x256.png" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System" />
+    <Reference Include="Xwt">
+      <HintPath>Resources\Xwt.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Xwt.Gtk3">
+      <HintPath>Resources\Xwt.Gtk3.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Xwt.WPF">
+      <HintPath>Resources\Xwt.WPF.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Renci.SshNet">
+      <HintPath>..\packages\SSH.NET.2013.4.7\lib\net40\Renci.SshNet.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Xwt.dll" />
+    <EmbeddedResource Include="Resources\Xwt.Gtk3.dll" />
+    <EmbeddedResource Include="Resources\Xwt.Gtk3.dll.config" />
+    <EmbeddedResource Include="Resources\Xwt.WPF.dll" />
+    <EmbeddedResource Include="Resources\Renci.SshNet.dll" />
+    <EmbeddedResource Include="Resources\icon-64x64.png" />
+  </ItemGroup>
 </Project>

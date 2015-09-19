@@ -8,10 +8,10 @@ namespace UbntTools {
 		[STAThread]
 		public static void Main (string[] arguments) {
 
-			EmbeddedAssembly.Load ("Resources.Xwt.dll", "Xwt.dll");
-			EmbeddedAssembly.Load ("Resources.Xwt.Gtk3.dll", "Xwt.Gtk3.dll");
-			EmbeddedAssembly.Load ("Resources.Xwt.WPF.dll", "Xwt.WPF.dll");
-			EmbeddedAssembly.Load ("Resources.Renci.SshNet.dll", "Renci.SshNet.dll");
+			EmbeddedAssembly.Load ("UbntTools.Resources.Xwt.dll", "Xwt.dll");
+			EmbeddedAssembly.Load ("UbntTools.Resources.Xwt.Gtk3.dll", "Xwt.Gtk3.dll");
+			EmbeddedAssembly.Load ("UbntTools.Resources.Xwt.WPF.dll", "Xwt.WPF.dll");
+			EmbeddedAssembly.Load ("UbntTools.Resources.Renci.SshNet.dll", "Renci.SshNet.dll");
 
 
 

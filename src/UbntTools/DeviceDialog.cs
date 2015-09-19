@@ -1,16 +1,17 @@
 ﻿using System;
 using Xwt;
 using UbntTools.Entity;
+using Xwt.Drawing;
 
 namespace UbntTools {
 
 	public class DeviceDialog : Dialog {
 
 		public DeviceDialog (Device device) {
+			Title = string.Empty;
+			//Icon = Image.FromResource ("UbntTools.Resources.icon-64x64.png");
 			
 			Table table = new Table ();
-
-
 
 			table.Add (new Label ("HW Address: ") { TextAlignment = Alignment.End }, 0, 0);
 			table.Add (new Label (device.FormatedMacAddress), 1, 0);
@@ -22,9 +23,6 @@ namespace UbntTools {
 			table.Add (new Label (device.Firmware.Build), 1, 3);
 			table.Add (new Label ("Uptime: ") { TextAlignment = Alignment.End }, 0, 4);
 			table.Add (new Label ( string.Format ("{0:%d} dias {1:hh\\:mm\\:ss}", device.Uptime, device.Uptime)), 1, 4);
-
-
-			 
 
 			Buttons.Add (new DialogButton ("Close", Command.Close)  );
 
